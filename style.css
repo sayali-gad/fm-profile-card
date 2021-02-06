@@ -1,0 +1,114 @@
+html {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --light-gray: hsl(0, 0%, 80%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  height: inherit;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 20vh;
+
+  background-image: url(./images/bg-pattern-top.svg),
+    url(./images/bg-pattern-bottom.svg);
+  background-color: var(--dark-cyan);
+  background-repeat: no-repeat;
+  background-position: right 55vw bottom 27vh, left 35vw top 35vh;
+}
+
+@media screen and (min-width: 20.83333em) {
+  .container {
+    background-position: right 52vw bottom 31vh, left 45vw top 50vh;
+    padding-top: 25vh;
+  }
+}
+
+.card {
+  background-color: #fff;
+  margin: 0 1.5em;
+  border-radius: 1em;
+  box-shadow: 0.5em 0.5em 1.5em rgb(0 0 0 / 20%);
+}
+
+@media screen and (min-width: 20.83333em) {
+  .card {
+    max-width: 20em;
+    margin: 0 auto;
+  }
+}
+
+.card__header {
+  background-image: url(./images/bg-pattern-card.svg);
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  height: 8em;
+}
+
+.card__header__img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  border: 5px solid #fff;
+}
+
+.card__body {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+  margin-top: 5em;
+}
+
+.card__body > h2 {
+  font-size: 1rem;
+  color: var(--very-dark-desaturated-blue);
+}
+
+.card__body > h2 > span {
+  color: var(--dark-gray);
+  font-weight: normal;
+}
+
+.card__footer {
+  border-top: 1px solid var(--light-gray);
+  overflow: auto;
+}
+
+.card__footer > ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card__footer > ul > li > * + * {
+  font-weight: normal;
+  color: var(--dark-gray);
+  font-size: 0.625rem;
+  margin-top: 0;
+}
+
+.card__footer > ul > li > p:first-child {
+  margin-bottom: 0.4em;
+}
